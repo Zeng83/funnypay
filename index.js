@@ -26,7 +26,7 @@ function registerRoutes() {
       method: "GET",
       handler: {
         directory: {
-          path: "dist/html"
+          path: "client/html"
         }
       }
     }

@@ -2,7 +2,7 @@ module.exports = {
   entry: "./client/app.jsx",
   output: {
     path: "dist/js",
-    filename: "bundle.js",
+    filename: "bundle.dev.js",
     publicPath: "http://127.0.1.1:2992/js"
   },
   module: {
