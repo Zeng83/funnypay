@@ -1,3 +1,5 @@
-import Hello from "./components/hello.jsx";
+import React from "react";
+import ReactDOM from "react-dom";
+import Payment from "./components/payment.jsx";
 
-ReactDOM.render(<Hello name=" Zhao!"/>, document.getElementById("container"));
+ReactDOM.render(<Payment name=" Zhao!"/>, document.getElementById("container"));
