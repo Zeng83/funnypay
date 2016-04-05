@@ -24,8 +24,10 @@ function registerRoutes() {
     {
       path: "/{param*}",
       method: "GET",
-      handler: function(req, reply) {
-        reply.file("client/html/index.html");
+      handler: {
+        directory: {
+          path: "client/html"
+        }
       }
     }
   ]);
