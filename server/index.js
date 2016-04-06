@@ -1,16 +1,9 @@
 "use strict";
 
-require("babel-core/register");
-
 const Hapi = require("hapi");
 const Inert = require("inert");
 
 const server = new Hapi.Server();
-
-const Home = require("./client/components/home.jsx").Home;
-
-const React = require("react");
-const ReactDom = require("react-dom/server");
 
 server.connection({
   host: "localhost",
@@ -31,10 +24,10 @@ function registerRoutes() {
     {
       path: "/{param*}",
       method: "GET",
-      handler: function(req, reply) {
-        const html = ReactDom.renderToString(React.createElement(Home));
-        reply(`<!DOCTYPE html><div id="container">SSR: ${html}</div>
-          <script src="http://localhost:2992/js/bundle.dev.js"></script>`);
+      handler: {
+        directory: {
+          path: "client/html"
+        }
       }
     }
   ]);
